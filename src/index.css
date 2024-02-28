@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+
+/* CSS Variables for theme colors and common values */
+:root {
+  --primary-color: #6b47ed;
+  --disabled-color: #d8d8d8;
+  --indicator-size: 12px;
+  --border-radius: 50%;
+  --border-width: 1px;
+}
+
+/* Custom Styles for Ant Design Radio and Checkbox Components */
+/* Hide default inner elements */
+.ant-radio .ant-radio-inner,
+.ant-checkbox .ant-checkbox-inner {
+  display: none !important;
+}
+
+/* Custom indicator for radio and checkbox */
+.ant-radio-wrapper::before,
+.ant-checkbox-wrapper::before {
+  content: '';
+  display: inline-block;
+  width: var(--indicator-size);
+  height: var(--indicator-size);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--primary-color);
+  vertical-align: middle;
+}
+
+/* Checked state customization */
+.ant-radio-wrapper-checked::before,
+.ant-checkbox-wrapper-checked::before {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Customization for non-editable (disabled) state */
+.nonEditable .ant-radio-wrapper::before {
+  border-color: var(--disabled-color);
+}
+
+.nonEditable .ant-radio-wrapper-checked::before {
+  background-color: var(--disabled-color);
+}
+
+label.nonEditable.ant-checkbox-wrapper::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #d8d8d8;
+  vertical-align: middle;
+}
+
+label.nonEditable.ant-checkbox-wrapper-checked::before {
+  background-color: #d8d8d8;
+}
+
+.bg-white-force {
+  background-color: white !important;
+}
+
+[data-editable='true'] .ant-input::placeholder {
+  color: #979797; /* Color for editable state */
+}
+
+[data-editable='false'] .ant-input::placeholder {
+  color: #f5f5f5; /* Color for non-editable state */
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

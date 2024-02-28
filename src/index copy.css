@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+/* radio */
+.ant-radio .ant-radio-inner {
+  display: none !important;
+}
+
+.ant-radio-wrapper::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #6b47ed; /* Border color */
+  /* margin-right: 8px; */
+  vertical-align: middle;
+}
+
+.ant-radio-wrapper-checked::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #6b47ed; /* Background color for checked state */
+  border: 2px solid #6b47ed; /* Border color for checked state */
+  vertical-align: middle;
+}
+
+.nonEditable .ant-radio-wrapper::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #d8d8d8; /* Border color */
+  /* margin-right: 8px; */
+  vertical-align: middle;
+}
+
+.nonEditable .ant-radio-wrapper-checked::before {
+  background-color: #d8d8d8;
+}
+
+/* checkbox */
+.ant-checkbox .ant-checkbox-inner {
+  display: none !important;
+}
+
+/* Custom indicator */
+.ant-checkbox-wrapper::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #6b47ed; /* Border color */
+  /* margin-right: 8px; */
+  vertical-align: middle;
+}
+
+/* Checked state */
+.ant-checkbox-wrapper-checked::before {
+  background-color: #6b47ed; /* Background color for checked state */
+}
+
+/* Custom indicator for non-editable checkboxes */
+label.nonEditable.ant-checkbox-wrapper::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #d8d8d8; /* Border color */
+  /* margin-right: 8px; */
+  vertical-align: middle;
+}
+
+/* Adjusting the checked state for non-editable checkboxes */
+label.nonEditable.ant-checkbox-wrapper-checked::before {
+  background-color: #d8d8d8;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
